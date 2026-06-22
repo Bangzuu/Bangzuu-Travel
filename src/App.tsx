@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   ArrowRight,
   ChevronDown,
@@ -55,9 +56,13 @@ function ImageCard({ src, alt, className = '', children }: ImageCardProps) {
 }
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Bangzuu Studios home">
+      <a className="brand" href="#top" aria-label="Bangzuu Studios home" onClick={closeMenu}>
         <span className="brand-mark" aria-hidden="true">
           <img src="/images/bangzuu-logo.png" alt="" />
         </span>
@@ -68,14 +73,43 @@ function Header() {
         </span>
       </a>
 
-      <nav className="main-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#services" className="nav-with-icon">
+      <button
+        className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
+        type="button"
+        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav
+        className={`main-nav ${menuOpen ? 'is-open' : ''}`}
+        id="primary-navigation"
+        aria-label="Primary navigation"
+        style={
+          menuOpen
+            ? {
+                maxHeight: '360px',
+                marginTop: '4px',
+                padding: '12px',
+                borderColor: 'rgba(255, 107, 255, 0.28)',
+                opacity: 1,
+                transform: 'translateY(0)',
+              }
+            : undefined
+        }
+      >
+        <a href="#work" onClick={closeMenu}>Work</a>
+        <a href="#services" className="nav-with-icon" onClick={closeMenu}>
           Services
           <ChevronDown aria-hidden="true" size={14} />
         </a>
-        <a href="#studio">Studio</a>
-        <a href="#contact">Contact</a>
+        <a href="#studio" onClick={closeMenu}>Studio</a>
+        <a href="#contact" onClick={closeMenu}>Contact</a>
       </nav>
 
       <CTAButton>Start your project</CTAButton>
