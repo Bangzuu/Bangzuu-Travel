@@ -1131,11 +1131,12 @@ a {
 
 @media (max-width: 780px) {
   .hero-section {
-    padding-top: 24px;
+    padding: 22px 20px 16px;
   }
 
   .site-header {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .site-header .btn-primary {
@@ -1143,55 +1144,110 @@ a {
   }
 
   .main-nav {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 18px;
+    width: 100%;
+    padding-right: 0;
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+  .main-nav a {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
   }
 
   .brand {
+    width: 100%;
     min-width: 0;
+    gap: 14px;
   }
 
   .brand-mark {
-    width: 86px;
-    height: 86px;
+    width: 72px;
+    height: 72px;
   }
 
   .brand strong {
-    font-size: 1.12rem;
-    letter-spacing: 0.28em;
+    font-size: clamp(1rem, 6.1vw, 1.42rem);
+    letter-spacing: 0.22em;
   }
 
   .brand small {
-    letter-spacing: 0.4em;
+    margin-top: 8px;
+    letter-spacing: 0.32em;
+  }
+
+  .brand em {
+    margin-top: 8px;
+    font-size: 0.92rem;
   }
 
   .hero-grid {
-    margin-top: 46px;
+    gap: 36px;
+    margin-top: 38px;
   }
 
-  .hero-copy h1,
-  .old-model-copy h2,
+  .hero-copy h1 {
+    font-size: clamp(2.42rem, 11.5vw, 3.55rem);
+    line-height: 1.02;
+  }
+
   .section-kicker h2,
   .section-heading h2,
   .ai-copy h2,
   .selected-work-section h2,
   .contact-band h2 {
-    font-size: clamp(2.55rem, 14vw, 4rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.35rem);
+    line-height: 1.04;
+  }
+
+  .old-model-copy h2 {
+    font-size: clamp(2.18rem, 10vw, 3.05rem);
+    line-height: 0.98;
+  }
+
+  .old-model-heading span {
+    white-space: normal;
+  }
+
+  .lead,
+  .supporting,
+  .plot-copy,
+  .ai-copy p:not(.eyebrow),
+  .contact-band p:not(.eyebrow),
+  .contact-band strong {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    line-height: 1.35;
   }
 
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
+    margin-top: 32px;
   }
 
   .btn-primary,
-  .btn-ghost {
+  .btn-ghost,
+  .btn-light {
+    min-height: 56px;
     width: 100%;
+    padding: 0 24px;
   }
 
   .hero-collage {
     display: flex;
     flex-direction: column;
+    gap: 12px;
     min-height: 0;
   }
 
@@ -1201,7 +1257,20 @@ a {
   .story-card,
   .cruise-card,
   .strip-card {
-    min-height: 230px;
+    height: 220px;
+    min-height: 0;
+  }
+
+  .strip-card {
+    height: 150px;
+  }
+
+  .episode-copy,
+  .story-copy,
+  .series-title {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
   }
 
   .service-card {
@@ -1211,12 +1280,25 @@ a {
   }
 
   .old-model-section {
-    padding-top: 58px;
+    padding: 56px 20px;
+  }
+
+  .old-model-copy,
+  .story-world-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .problem-list {
+    margin-top: 26px;
   }
 
   .problem-point {
     grid-template-columns: 52px 1fr;
     gap: 16px;
+    min-width: 0;
+    padding: 13px 0;
   }
 
   .problem-point::after {
@@ -1228,23 +1310,37 @@ a {
     height: 50px;
   }
 
+  .problem-point p,
+  .model-body,
+  .closing-line {
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .model-body {
+    margin-top: 22px;
+  }
+
+  .closing-line {
+    margin-top: 24px;
+  }
+
   .story-world-card {
     padding: 13px;
     border-radius: 15px;
   }
 
   .series-layout,
+  .episode-list,
   .benefit-strip,
   .pill-row {
     grid-template-columns: 1fr;
+    width: 100%;
+    min-width: 0;
   }
 
   .series-main {
-    min-height: 360px;
-  }
-
-  .episode-list {
-    grid-template-columns: 1fr;
+    min-height: 320px;
   }
 
   .episode-tile {
@@ -1252,12 +1348,22 @@ a {
   }
 
   .benefit-strip {
+    gap: 18px;
     padding: 20px;
+  }
+
+  .benefit-item {
+    align-items: flex-start;
+  }
+
+  .pill-row {
+    gap: 12px;
   }
 
   .contact-band {
     align-items: flex-start;
     flex-direction: column;
+    padding: 56px 20px;
   }
 
   .plot-section,
@@ -1265,6 +1371,8 @@ a {
   .ai-section,
   .selected-work-section,
   .site-footer {
+    padding-right: 20px;
+    padding-left: 20px;
     padding-top: 58px;
     padding-bottom: 58px;
   }
