@@ -69,7 +69,6 @@ function Header() {
         <span>
           <strong>Bangzuu</strong>
           <small>Studios</small>
-          <em>AI-native film studio for travel & hospitality</em>
         </span>
       </a>
 

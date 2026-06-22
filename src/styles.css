@@ -125,16 +125,6 @@ a {
   text-transform: uppercase;
 }
 
-.brand em {
-  display: block;
-  margin-top: 12px;
-  color: rgba(242, 241, 236, 0.82);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(0.98rem, 1.3vw, 1.28rem);
-  font-weight: 600;
-  line-height: 1;
-}
-
 .main-nav {
   display: flex;
   justify-content: flex-end;
@@ -837,6 +827,7 @@ a {
   display: grid;
   grid-template-columns: minmax(280px, 0.86fr) minmax(420px, 1.14fr);
   gap: clamp(34px, 6vw, 88px);
+  padding-bottom: clamp(42px, 5vw, 70px);
   color: #fff;
   background:
     radial-gradient(circle at 14% 18%, rgba(210, 60, 255, 0.17), transparent 22rem),
@@ -893,7 +884,10 @@ a {
 
 .dark-section {
   color: #fff;
-  background: var(--midnight-indigo);
+  background:
+    linear-gradient(90deg, rgba(5, 4, 22, 0.9), rgba(5, 4, 22, 0.78)),
+    linear-gradient(180deg, rgba(5, 4, 22, 0.96), rgba(5, 4, 22, 0.72)),
+    url('/images/cruise-dusk.png') center / cover;
 }
 
 .section-heading {
@@ -996,6 +990,7 @@ a {
   grid-template-columns: minmax(360px, 0.86fr) minmax(420px, 1fr);
   gap: clamp(32px, 5vw, 78px);
   align-items: center;
+  padding-bottom: clamp(42px, 5vw, 68px);
   color: #fff;
   background:
     radial-gradient(circle at 85% 30%, rgba(210, 60, 255, 0.14), transparent 24rem),
@@ -1018,6 +1013,7 @@ a {
 }
 
 .process-section {
+  padding-top: clamp(46px, 5.4vw, 76px);
   color: #fff;
   background: var(--midnight-indigo);
 }
@@ -1312,11 +1308,6 @@ a {
     letter-spacing: 0.32em;
   }
 
-  .brand em {
-    margin-top: 8px;
-    font-size: 0.92rem;
-  }
-
   .hero-grid {
     gap: 36px;
     margin-top: 38px;
@@ -1377,10 +1368,10 @@ a {
 
   .hero-collage {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     grid-template-rows: none;
-    grid-auto-rows: 168px;
-    gap: 12px;
+    grid-auto-rows: auto;
+    gap: 10px;
     min-height: 0;
   }
 
@@ -1392,13 +1383,37 @@ a {
   .strip-card {
     grid-column: auto;
     grid-row: auto;
-    height: 168px;
     min-height: 0;
+  }
+
+  .lagoon-card {
+    grid-column: 1 / span 5;
+    height: 150px;
+  }
+
+  .arrival-card {
+    grid-column: 6 / span 2;
+    height: 150px;
+  }
+
+  .window-card {
+    grid-column: 1 / span 2;
+    height: 160px;
+  }
+
+  .story-card {
+    grid-column: 3 / span 3;
+    height: 160px;
+  }
+
+  .cruise-card {
+    grid-column: 6 / span 2;
+    height: 160px;
   }
 
   .strip-card {
     grid-column: 1 / -1;
-    height: 132px;
+    height: 82px;
   }
 
   .episode-copy,
@@ -1552,6 +1567,14 @@ a {
     padding-bottom: 58px;
   }
 
+  .ai-section {
+    padding-bottom: 42px;
+  }
+
+  .process-section {
+    padding-top: 42px;
+  }
+
   .deep-card-grid,
   .industry-grid,
   .process-grid {
@@ -1586,9 +1609,9 @@ a {
 
 @media (min-width: 600px) and (max-width: 980px) {
   .hero-collage {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr));
     grid-template-rows: none;
-    grid-auto-rows: 160px;
+    grid-auto-rows: auto;
     min-height: 0;
   }
 
@@ -1605,6 +1628,32 @@ a {
   }
 
   .strip-card {
-    grid-column: auto;
+    grid-column: 1 / -1;
+    height: 96px;
+  }
+
+  .lagoon-card {
+    grid-column: 1 / span 5;
+    height: 190px;
+  }
+
+  .arrival-card {
+    grid-column: 6 / span 2;
+    height: 190px;
+  }
+
+  .window-card {
+    grid-column: 1 / span 2;
+    height: 200px;
+  }
+
+  .story-card {
+    grid-column: 3 / span 3;
+    height: 200px;
+  }
+
+  .cruise-card {
+    grid-column: 6 / span 2;
+    height: 200px;
   }
 }
