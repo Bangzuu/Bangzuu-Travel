@@ -1144,6 +1144,7 @@ a {
   }
 
   .site-header .btn-primary {
+    display: none;
     grid-column: 1 / -1;
     justify-self: start;
     order: 4;
